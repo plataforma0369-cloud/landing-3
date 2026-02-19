@@ -1,0 +1,293 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Mostrar video escritorio, ocultar video móvil en pantallas grandes */
+.desktop-video {
+  display: block;
+}
+
+.mobile-video {
+  display: none;
+}
+
+/* En pantallas pequeñas (menos de 768px) */
+@media (max-width: 767px) {
+  .desktop-video {
+    display: none;
+  }
+
+  .mobile-video {
+    display: block;
+  }
+}
+
+/* Ocultar mobile-section en pantallas grandes */
+@media (min-width: 768px) {
+  .mobile-section {
+    display: none;
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  animation: slideInLeft 0.6s ease-out 1s forwards;
+  /* 0.6s duración, 1s de delay, se ejecuta una sola vez */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-content {
+  z-index: 1;
+  padding: 20px;
+}
+
+/* Estilos escritorio (PC) */
+.hero-content h1 {
+  font-weight: 900;
+  font-size: 5rem;
+}
+
+.hero-content h2 {
+  font-weight: 800;
+  font-size: 5rem;
+  margin-top: 20px;
+}
+
+.hero-content p {
+  font-size: 3rem;
+  margin-top: 10px;
+}
+
+
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+
+
+.top-right {
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  font-size: 1.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Ajustes móviles con fuentes fluidas */
+@media (max-width: 767px) {
+  .hero-content h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+  }
+
+  .hero-content h2 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  }
+
+  .hero-content p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+  }
+
+
+
+  .top-right {
+    font-size: clamp(0.8rem, 2.5vw, 1rem);
+    top: 20px;
+    right: 15px;
+  }
+}
+@media (max-width: 767px) {
+  /* ...tus estilos actuales... */
+
+  .hero-content {
+    padding-top: 10px; /* reduce padding arriba si quieres */
+  }
+
+  .hero-content h1,
+  .hero-content h2,
+  .hero-content .mb-2 {
+    margin-top: 0; /* quita margen arriba */
+    position: relative;
+    top: -140px; /* sube 10px */
+    font-size: 2rem;
+      color: rgb(0, 0, 0); /* color base cian neón */
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 40px #0ff,
+    0 0 80px #0ff;
+    animation: slideInLeft 1s ease-out forwards; 
+  }
+
+.btn-usuario {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  border: 2px solid #1dddc3;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0.85);
+  margin-top: 10px;
+  top: -155px;
+
+  /* Animaciones */
+  animation: fadeIn 0.5s ease-in-out 1s forwards, pulse-glow 1.5s ease-in-out infinite;
+  box-shadow: 0 0 12px #1dddc3, 0 0 24px #1dddc3;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Borde animado giratorio */
+.btn-usuario::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #22e21b, transparent, #3ddd1d);
+  animation: rotate-border 2s linear infinite;
+  z-index: -1;
+}
+
+.btn-usuario::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+
+.btn-usuario span,
+.btn-usuario i {
+  position: relative;
+  z-index: 2;
+}
+
+/* Estilos base (default desktop) */
+.icon-ws {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  object-fit: contain;
+}
+
+/* Tamaño del ícono en móviles */
+@media (max-width: 767px) {
+  .icon-ws {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+
+
+
+
+@media (min-width: 768px) {
+  .btn-usuario {
+    display: none !important;
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 4px #fd00be, 0 0 8px #771ddd;
+  }
+  50% {
+    box-shadow: 0 0 20px #fd00be, 0 0 40px #771ddd, 0 0 60px #d803aa;
+  }
+  100% {
+    box-shadow: 0 0 4px #fd00be, 0 0 8px #771ddd;
+  }
+}
+
+@keyframes rotate-border {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+}
+
+/* FIX: evitar que el botón de WhatsApp se agrande en PC */
+@media (min-width: 768px) {
+  .btn-usuario {
+    font-size: 30px !important;
+    padding: 30px 16px !important;
+    top: 0 !important;
+  }
+
+  .icon-ws {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
