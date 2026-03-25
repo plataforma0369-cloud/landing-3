@@ -35,32 +35,48 @@ src="https://www.facebook.com/tr?id=1607923373962526&ev=PageView&noscript=1"
 </head>
 <body>
   <section class="hero-section">
-    <!-- Fondo video -->
-    <video class="hero-video" autoplay muted loop playsinline>
+    <!-- Fondo video solo escritorio -->
+    <video class="hero-video desktop-video" autoplay muted loop playsinline>
       <source src="video.mp4" type="video/mp4">
       Tu navegador no soporta videos HTML5.
     </video>
 
-    <!-- Video para móvil -->
-    <video class="hero-video mobile-video" autoplay muted loop playsinline>
-      <source src="videomovil.mp4" type="video/mp4" />
-      Tu navegador no soporta videos HTML5.
-    </video>
+    <div class="hero-overlay"></div>
+    <div class="mobile-glow mobile-glow-left" aria-hidden="true"></div>
+    <div class="mobile-glow mobile-glow-right" aria-hidden="true"></div>
+    <img src="rayito.png" alt="" class="mobile-ray mobile-ray-left" aria-hidden="true">
+    <img src="rayito.png" alt="" class="mobile-ray mobile-ray-right" aria-hidden="true">
+    <img src="zeus.png" alt="" class="mobile-character mobile-character-left" aria-hidden="true">
+    <img src="girl.png" alt="" class="mobile-character mobile-character-right" aria-hidden="true">
 
     <!-- Texto esquina superior -->
     <div class="top-right">PLATAFORMA 369</div>
 
     <!-- Contenido central -->
     <div class="hero-content slide-in-left">
-      <p class="mb-2">BIENVENIDO</p>
-      <h1>TE ESPERA TU</h1>
-<a href="https://wa.me/5492236032088?text=Hola%2C%20mi%20nombre%20es..." class="btn-usuario" onclick="fbq('track', 'Contact');">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon-ws">
-  PEDIR USUARIO
-</a>
+      <p class="hero-kicker">BIENVENIDO</p>
+      <h1 class="hero-title hero-title-desktop">TE ESPERA TU <span>BONUS EXTRA</span></h1>
+      <h1 class="hero-title hero-title-mobile">EMPEZA A JUGAR CON TU <span>BONUS DE BIENVENIDA</span></h1>
+      <p class="hero-lead">Pedí tu usuario por WhatsApp y activá tu cuenta en minutos.</p>
 
-      <h2>BONUS EXTRA</h2>
-      <p>RECLAMA YA</p>
+      <a
+        href="https://wa.me/5492236032088?text=Hola%2C%20quiero%20mi%20usuario%20para%20jugar."
+        class="btn-usuario"
+        aria-label="Pedir usuario por WhatsApp"
+        onclick="fbq('track', 'Contact');"
+      >
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icon-ws">
+        <span class="label-desktop">PEDIR USUARIO</span>
+        <span class="label-mobile">QUIERO JUGAR AHORA</span>
+      </a>
+
+      <p class="cta-note">Te respondemos por WhatsApp y te dejamos listo para entrar hoy.</p>
+
+      <div class="bonus-card">
+        <span class="bonus-eyebrow">BONUS EXTRA</span>
+        <strong>30%</strong>
+        <p>para arrancar con más saldo desde el primer ingreso</p>
+      </div>
     </div>
   </section>
 
